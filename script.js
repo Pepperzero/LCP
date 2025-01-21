@@ -78,7 +78,7 @@ $("[animate]").each(function (index) {
   createScrollTrigger($(this), tl);
 });
 
-//////////// FAQ DROPDOWN
+//////////// DROPDOWNS
 $(".faq_toggle").on("click", function () {
   // Close other accordions when opening new one
   if (!$(this).hasClass("open")) {
@@ -95,6 +95,8 @@ $(".faq_toggle").on("click", function () {
     // Reset icon rotation when closing
     let icon = $(this).find(".faq_icon"); // Assuming the icon is inside the faq_toggle
     icon.css("transform", "rotate(0deg)");
+    let dropdownIcon = $(this).find(".dropdown_icon"); // Assuming the icon is inside the faq_toggle
+    dropdownIcon.css("transform", "rotate(0deg)");
   } else {
     // Open the content div if already closed
     sibling.css("height", "auto");
@@ -108,8 +110,8 @@ $(".faq_toggle").on("click", function () {
     let icon = $(this).find(".faq_icon"); // Assuming the icon is inside the faq_toggle
     icon.css("transform", "rotate(45deg)");
     // Rotate the icon 45 degrees here
-    let dropdown = $(this).find(".dropdown_icon"); // Assuming the icon is inside the faq_toggle
-    dropdown.css("transform", "rotate(90deg)");
+    let dropdownIcon = $(this).find(".dropdown_icon"); // Assuming the icon is inside the faq_toggle
+    dropdownIcon.css("transform", "rotate(180deg)");
   }
   // Open and close the toggle div
   $(this).toggleClass("open");
